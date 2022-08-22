@@ -32,6 +32,5 @@ namespace TesteMVC5.Models
         public string SenhaConfirmacao { get; set; }
 
         //Pesquisar como criar seu proprio DataAnnotations.
-
     }
 }
