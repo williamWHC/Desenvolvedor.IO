@@ -10,11 +10,14 @@
 
         <h4>Informe os dados do aluno:</h4>
         <hr />
+        <!--mensagem de validação de campos RAZOR-->
+        @Html.ValidationSummary(true, "Encontramos erros na validação do campos.", new { @class = "text-danger" })
 
         <div class="form-group">
             @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new {@class = "text-danger"})
             </div>
         </div>
 
@@ -22,6 +25,8 @@
             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
             </div>
         </div>
 
@@ -29,6 +34,7 @@
             @Html.LabelFor(model => model.CPF, htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-lg-10">
                 @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CPF, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -36,6 +42,7 @@
             @Html.LabelFor(model => model.Ativo, htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-md-10">
                 @Html.CheckBoxFor(model => model.Ativo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ativo, "Campo checkbox não selecionado", new { @class = "text-danger" })
             </div>
         </div>
 
