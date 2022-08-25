@@ -7,23 +7,20 @@ namespace TesteMVC5.Controllers
     [RoutePrefix("Aluno")]
     public class AlunoController : Controller
     {
+        [HttpGet]
         [Route("Novo-Aluno")]
-        public ActionResult Novo(AlunoModel aluno)
+        public ActionResult NovoAluno()
         {
-            aluno = new AlunoModel()
-            {
-                Id = 1,
-                Nome = "William",
-                Email = "email@hotmail.com",
-                CPF = "37709087833",
-                DataMatricula = new DateTime(),
-                Ativo = true,
-                Senha = "123",
-                SenhaConfirmacao = "123"
+            return View();
+        }
 
-            };
+        [HttpPost]
+        [Route("Novo-Aluno")]
+        public ActionResult NovoAluno(AlunoModel aluno)
+        {
+            if (!ModelState.IsValid) return View();
 
-            return RedirectToAction("index", aluno);
+            return View("NovoAluno", aluno);
         }
 
         // GET: Aluno
