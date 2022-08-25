@@ -42,7 +42,7 @@
             @Html.LabelFor(model => model.Ativo, htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-md-10">
                 @Html.CheckBoxFor(model => model.Ativo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Ativo, "Campo checkbox não selecionado", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Ativo, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -54,4 +54,9 @@
 
     </div>
 
+}
+<!--Cria um arquivo com base nos conjuntos de arquivos de jquery do projeto, para renderizar no front-->
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }
